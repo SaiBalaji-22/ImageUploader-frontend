@@ -1,0 +1,49 @@
+.container {
+	background: #ffffff;
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+	border-radius: 12px;
+
+	padding: 3.6rem 3.2rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.container .title {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 1.8rem;
+	line-height: 2.7rem;
+}
+
+.dropzone {
+	padding: 2rem;
+	display: flex;
+	align-items: center;
+
+	border-style: dashed;
+	border-width: 0.4rem;
+	border-radius: 1.2rem;
+	border-color: #cac9c9;
+	color: #bdbdbd;
+	/* outline: none; */
+	transition: border 0.3s ease-in-out;
+}
+
+.dropzone .desc {
+	font-size: 1.2rem;
+}
+
+.focused {
+	border-color: #2196f3;
+}
+
+.accept {
+	border-color: #00e676;
+}
+
+.reject {
+	border-color: #ff1744;
+}

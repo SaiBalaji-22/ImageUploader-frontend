@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
+import UploadedPage from './components/UploadedPage';
+import LoadingPage from './components/LoadingPage';
+import UploadPage from './components/UploadPage';
+import { MyContext } from './contexts/MyContext';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [isUploading, setIsUploading] = useState(false);
+	const [uploaded, setUploaded] = useState(false);
+
+	useEffect(() => {
+		// console.log('Component Mounted');
+	});
+
+	return (
+		<MyContext.Provider value={{ setIsUploading, setUploaded }}>
+			<div className='App-container'>
+				{!isUploading && !uploaded ? <UploadPage /> : null}
+				{isUploading && !uploaded ? <LoadingPage /> : null}
+				{!isUploading && uploaded ? <UploadedPage /> : null}
+			</div>
+		</MyContext.Provider>
+	);
 }
 
 export default App;
