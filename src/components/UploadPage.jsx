@@ -2,6 +2,7 @@ import React, { useContext, useMemo, useEffect, useCallback } from 'react';
 import { MyContext } from '../contexts/MyContext';
 import styles from '../styles/Upload.module.css';
 import { useDropzone } from 'react-dropzone';
+import imageLogo from '../Assets/image.svg';
 
 function UploadPage() {
 	const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
@@ -40,11 +41,14 @@ function UploadPage() {
 			<h1 className={styles.title}>Upload Your Image</h1>
 			<div {...getRootProps({ className: styleDropzone })}>
 				<input {...getInputProps()} />
-				<p className={styles.desc}>Drag & Drop your image here</p>
-				{isDragAccept ? 'Drag Actice' : 'Drop files here'}
+				<div className={`${styles.flex} ${styles.imageContainer}`}>
+					<img src={imageLogo} alt='imageLogo' />
+					<p className={styles.desc}>Drag & Drop your image here</p>
+					{/* {isDragAccept ? 'Drag Actice' : 'Drop files here'} */}
+				</div>
 			</div>
-			<p>Or</p>
-			<button type='button' onClick={open}>
+			<p className={styles.textColor}>Or</p>
+			<button type='button' onClick={open} className={styles.btn}>
 				Choose a File
 			</button>
 		</div>
