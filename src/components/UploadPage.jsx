@@ -5,18 +5,27 @@ import { useDropzone } from 'react-dropzone';
 import imageLogo from '../Assets/image.svg';
 
 function UploadPage() {
-	const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
-		console.log(acceptedFiles);
-		console.log(rejectedFiles);
+	const { setIsUploading, setUploadedImage, setUploaded } = useContext(MyContext);
+
+	// const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
+	// 	// console.log(acceptedFiles);
+	// 	// console.log(rejectedFiles);
+	// }, []);
+
+	const onDropAccepted = useCallback((acceptedFiles) => {
+		console.log(acceptedFiles[0]);
+		setUploadedImage(acceptedFiles[0]);
+		setIsUploading(true);
+		// setUploaded(true);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
 	const { getRootProps, getInputProps, isFocused, isDragAccept, isDragReject, open } = useDropzone({
 		accept: {
-			'image/*': [],
+			'image/*': ['.png', '.jpeg', '.jpg'],
 		},
-		onDrop,
+		onDropAccepted,
 	});
-
-	const { setIsUploading, setUploaded } = useContext(MyContext);
 
 	// const handleClick = () => {
 	// 	setIsUploading(true);
@@ -29,12 +38,8 @@ function UploadPage() {
 	);
 
 	// useEffect(() => {
-	// });
-
-	// useEffect(() => {
-	// 	console.log(getRootProps({ className: styleDropzone }));
-	// 	console.log(styleDropzone);
-	// }, [isFocused, isDragAccept, isDragReject]);
+	// 	console.log(getInputProps());
+	// }, []);
 
 	return (
 		<div className={styles.container}>

@@ -1,0 +1,66 @@
+.container {
+	background: #ffffff;
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+	border-radius: 12px;
+
+	padding: 3.6rem 3.2rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+}
+
+.checkIcon {
+	font-size: 4rem;
+	color: #219653;
+}
+
+.message {
+	font-size: 1.8rem;
+	color: #4f4f4f;
+}
+
+.image {
+	width: 40rem;
+	/* height: 5rem; */
+	border-radius: 8px;
+}
+
+.clipboardContainer {
+	width: 40rem;
+	height: 5rem;
+	padding: 0.1rem 0.2rem 0.1rem 0.8rem;
+	border: 0.1rem solid #e0e0e0;
+	border-radius: 8px;
+	background-color: #f6f8fb;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	/* justify-content: center; */
+}
+
+.linkText {
+	/* display: inlint-block; */
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	/* width: 20rem; */
+	font-size: 1rem;
+}
+
+.btn {
+	font-size: 1rem;
+	padding: 1.3rem 1rem;
+	/* height: 95%; */
+	width: 7.5rem;
+	color: #ffffff;
+	border: none;
+	border-radius: 8px;
+	background-color: #2f80ed;
+}
+
+.btn:hover {
+	background-color: #388bf7;
+}
